@@ -73,7 +73,7 @@ Class User_Authentication extends CI_Controller {
 
         if ($this->form_validation->run() == FALSE) {
             if(isset($this->session->userdata['logged_in'])){
-                $this->load->view('admin_page');
+                $this->load->view('home/home');
             }else{
                 $this->load->view('login/login_form');
             }
