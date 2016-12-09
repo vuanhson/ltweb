@@ -95,7 +95,7 @@ Class User_Authentication extends CI_Controller {
                     );
 // Add user data in session
                     $this->session->set_userdata( $session_data);
-                    $this->load->view('home/home');
+                    redirect('/home/','index');
                 }
             } else {
                 $data = array(
