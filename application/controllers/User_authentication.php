@@ -73,7 +73,7 @@ Class User_Authentication extends CI_Controller {
 
         if ($this->form_validation->run() == FALSE) {
             if(isset($this->session->userdata['logged_in'])){
-                $this->load->view('home/home');
+                redirect('/page/','home');
             }else{
                 $this->load->view('login/login_form');
             }
@@ -95,7 +95,7 @@ Class User_Authentication extends CI_Controller {
                     );
 // Add user data in session
                     $this->session->set_userdata( $session_data);
-                    redirect('/home/','index');
+                    redirect('/page/','home');
                 }
             } else {
                 $data = array(

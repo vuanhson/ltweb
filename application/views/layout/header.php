@@ -10,10 +10,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
 <head>
     <title>EmeraldX</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" /><!-- 
+    <link href="<?php echo base_url(); ?>/css/bootstrap.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>/css/font-awesome.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>/css/style.css" rel="stylesheet">
+    <script src="<?php echo base_url(); ?>/js/jquery.js"></script>
+    <script src="<?php echo base_url(); ?>/js/bootstrap.js"></script>
+    <link rel="stylesheet" media="status_box" type="text/css" href="<?php echo base_url(); ?>/status_box.css" /> -->
+
     <link rel="stylesheet" media="screen,projection" type="text/css" href="<?php echo base_url(); ?>/css/main.css" />
     <link rel="stylesheet" media="print" type="text/css" href="<?php echo base_url(); ?>/print.css" />
     <link rel="stylesheet" media="aural" type="text/css" href="<?php echo base_url(); ?>/aural.css" />
+    
 </head>
 <body id="www-url-cz">
 <div id="main" class="box">
@@ -39,16 +47,17 @@
     <div id="tabs" class="noprint">
         <h3 class="noscreen">Navigation</h3>
         <ul class="box">
-            <li><a href="#">Home<span class="tab-l"></span><span class="tab-r"></span></a></li>
-            <li id="active"><a href="#">Weblog<span class="tab-l"></span><span class="tab-r"></span></a></li>
-            <li><a href="#">About Me<span class="tab-l"></span><span class="tab-r"></span></a></li>
-            <li><a href="#">Photos<span class="tab-l"></span><span class="tab-r"></span></a></li>
-            <li><a href="#">Portfolio<span class="tab-l"></span><span class="tab-r"></span></a></li>
-            <li><a href="#">Contact<span class="tab-l"></span><span class="tab-r"></span></a></li>
-            <li><a href="#">Links<span class="tab-l"></span><span class="tab-r"></span></a></li>
+            <li><a href="<?php echo base_url() ?>index.php/page/home">Home<span class="tab-l"></span><span class="tab-r"></span></a></li>
+            <li ><a href="<?php echo base_url() ?>index.php/page/home">Write Blog<span class="tab-l"></span><span class="tab-r"></span></a></li>
+            <li><a href="#">Messenger<span class="tab-l"></span><span class="tab-r"></span></a></li>
+            <li><a href="#">Friends<span class="tab-l"></span><span class="tab-r"></span></a></li>
+            <li><a href="#">Work<span class="tab-l"></span><span class="tab-r"></span></a></li>
+            <li><a href="#">Setting<span class="tab-l"></span><span class="tab-r"></span></a></li>
+            <li><a href="#">Logout<span class="tab-l"></span><span class="tab-r"></span></a></li>
         </ul>
         <hr class="noscreen" />
     </div>
+
     <div id="page" class="box">
         <div id="page-in" class="box">
             <div id="strip" class="box noprint">
@@ -57,4 +66,10 @@
                 <p id="breadcrumbs">You are here: <a href="#">Home</a> &gt; <a href="#">Category</a> &gt; <strong>Page</strong></p>
                 <hr class="noscreen" />
             </div>
+
+
+
+          
+
+
             <div id="content">
