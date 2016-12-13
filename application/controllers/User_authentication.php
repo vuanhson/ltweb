@@ -73,7 +73,7 @@ Class User_Authentication extends CI_Controller {
 
         if ($this->form_validation->run() == FALSE) {
             if(isset($this->session->userdata['logged_in'])){
-                redirect('/page/','home');
+                redirect('/page/home','location');
             }else{
                 $this->load->view('login/login_form');
             }
@@ -89,13 +89,14 @@ Class User_Authentication extends CI_Controller {
                 $result = $this->User->read_user_information($email);
                 if ($result != false) {
                     $session_data = array(
+                        'userid'  =>$result[0]->user_id,
                         'username' => $result[0]->user_name,
                         'email' => $result[0]->email,
                         'logged_in' => TRUE
                     );
 // Add user data in session
                     $this->session->set_userdata( $session_data);
-                    redirect('/page/','home');
+                    redirect('/page/home','location');
                 }
             } else {
                 $data = array(
@@ -109,11 +110,8 @@ Class User_Authentication extends CI_Controller {
 // Logout from admin page
     public function logout() {
 
-// Removing session data
-        $sess_array = array(
-            'username' => ''
-        );
-        $this->session->unset_userdata('logged_in', $sess_array);
+
+        $this->session->sess_destroy();
         $data['message_display'] = 'Successfully Logout';
         $this->load->view('login/login_form', $data);
     }

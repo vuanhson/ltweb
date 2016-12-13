@@ -58,6 +58,42 @@ Class User extends CI_Model {
         }
     }
 
+    public function get_user_list_by_username($username){
+        $condition="user_name LIKE "."'%".$username."%'";
+        $this->db->select('*');
+        $this->db->from('User');
+        $this->db->where($condition);
+        $query = $this->db->get();
+        //print_r($condition);
+        return $query->result();
+    }
+
+    public function add_follow_with($from_user_id,$to_user_id){
+        $this->db->insert('Follow', array(
+            from_user_id =>$from_user_id,
+            to_user_id  =>  $to_user_id
+        ));
+    }
+    public function relationship($userid1,$userid2){
+        $condition="from_user_id=".$userid1." and to_user_id=".$userid2;
+        $this->db->select('*');
+        $this->db->from('Follow');
+        $this->db->where($condition);
+        $count1=$this->db->get()->num_rows();
+        $condition="from_user_id=".$userid2." and to_user_id=".$userid1;
+        $this->db->select('*');
+        $this->db->from('Follow');
+        $this->db->where($condition);
+        $count2=$this->db->get()->num_rows();
+        return $count1*10+$count2;
+    }
+    public function select($condition){
+        $this->db->select('*');
+        $this->db->from('User');
+        $this->db->where($condition);
+        return $this->db->get()->result();
+    }
+
 }
 
 ?>
