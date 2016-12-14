@@ -1,11 +1,9 @@
 <style>
     .morectnt span {
-
         display: none;
-
     }
-
 </style>
+
 <?php
 foreach($post as $p) {
 
@@ -41,6 +39,7 @@ foreach($post as $p) {
     </div>
     <?php
 }?>
+
 <script type="text/javascript">
     $(document).ready(function() {
         //##### Send delete Ajax request to response.php #########
@@ -82,7 +81,6 @@ foreach($post as $p) {
 
 
 <script>
-
     $(function() {
         var showTotalChar = 200, showChar = "Show (+)", hideChar = "Hide (-)";
         $('.show').each(function() {
@@ -107,6 +105,4 @@ foreach($post as $p) {
             return false;
         });
     });
-
-
 </script>

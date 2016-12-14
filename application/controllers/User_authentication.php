@@ -94,10 +94,11 @@ Class User_Authentication extends CI_Controller {
                         'email' => $result[0]->email,
                         'logged_in' => TRUE
                     );
-// Add user data in session
+                    // Add user data in session
                     $this->session->set_userdata( $session_data);
                     redirect('/page/home','location');
                 }
+            //login fail
             } else {
                 $data = array(
                     'error_message' => 'Invalid Username or Password'

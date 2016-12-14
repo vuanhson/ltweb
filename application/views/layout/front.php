@@ -7,7 +7,7 @@
  */
  
         if($header) echo $header ;
-        if($middle)   echo $middle ;
-        if($right) echo $right ;
+        if($middle) echo $middle ;
+        if($right) 	echo $right ;
         if($footer) echo $footer ;
     ?>
