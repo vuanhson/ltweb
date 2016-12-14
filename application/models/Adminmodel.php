@@ -36,11 +36,9 @@ Class Adminmodel extends CI_Model {
         }
     }
 
-    public function get_user_list_by_username($username){
-        $condition="user_name LIKE "."'%".$username."%'";
+    public function get_user_list(){
         $this->db->select('*');
         $this->db->from('User');
-        $this->db->where($condition);
         $query = $this->db->get();
         //print_r($condition);
         return $query->result();
