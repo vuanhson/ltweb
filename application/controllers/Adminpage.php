@@ -33,14 +33,13 @@ class Adminpage extends MY_Controller {
         $this->layout();
     }
 
-<<<<<<< HEAD
     public function showpost($userid){
         //echo $userid;
         $this->data['posts']=$this->Post->get_by_user($userid);
         $this->middle='main_page/admin_post';
         $this->layout();
     }
-=======
+
     public function delete_user(){
         return $this->User->delete_user($this->input->post('user_id'));
     }
@@ -60,7 +59,7 @@ class Adminpage extends MY_Controller {
         ));
     }
 
->>>>>>> 68ada5c6edb7c4114d768ec80897738a8ae8c5e2
+
     /**
      *POST function
      */

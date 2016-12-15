@@ -53,15 +53,13 @@
 <?php
 foreach ($users as $u){
 ?>
-<<<<<<< HEAD
-    <tr>
+
+        
+
+    <tr id="row<?php echo $u->user_id?>">
         <td><label><a href="<?php echo base_url() ?>index.php/adminpage/showpost/<?php echo $u->user_id?>"> <?php echo $u->user_name?> </a></label>
 
         </td>
-=======
-    <tr id="row<?php echo $u->user_id?>">
-        <td><label><?php echo $u->user_name?></label></td>
->>>>>>> 68ada5c6edb7c4114d768ec80897738a8ae8c5e2
         <td>
     		<div id="<?php echo $u->user_id; ?>" class="edit_user_lnk"><a href="<?php echo base_url() ?>index.php/adminpage/edit_user/<?php echo $u->user_id ?>" >Edit</a></div>
     	</td>
