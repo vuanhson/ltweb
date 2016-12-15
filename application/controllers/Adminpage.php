@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: taohansamu
- * Date: 09/12/2016
- * Time: 00:06
- */
+
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Adminpage extends MY_Controller {
     public function __construct() {
@@ -37,6 +32,12 @@ class Adminpage extends MY_Controller {
         $this->layout();
     }
 
+    public function showpost($userid){
+        //echo $userid;
+        $this->data['posts']=$this->Post->get_by_user($userid);
+        $this->middle='main_page/admin_post';
+        $this->layout();
+    }
     /**
      *POST function
      */
