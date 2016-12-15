@@ -38,8 +38,7 @@ class Page extends MY_Controller {
         $this->middle= 'main_page/home';
         $this->layout();
     }
-
-    /**
+ /**
      *POST function
      */
     public function post(){

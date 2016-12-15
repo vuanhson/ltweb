@@ -23,6 +23,7 @@ class Adminpage extends MY_Controller {
 // Load database
         $this->load->model('Post');
         $this->load->model('Adminmodel');
+        $this->load->model('User');
 
     }
     public function index() {
@@ -35,6 +36,25 @@ class Adminpage extends MY_Controller {
         $this->data['users']=$this->Adminmodel->get_user_list();
         $this->middle= 'main_page/admin_page';
         $this->layout();
+    }
+
+    public function delete_user(){
+        return $this->User->delete_user($this->input->post('user_id'));
+    }
+
+    public  function edit_user($user_id){
+        //$this->data['user']=$this->User->get_user_list_by_userid($this->input->post('user_id'))
+        $this->data['users'] = $this->User->get_user_list_by_userid($user_id);
+        $this->middle = 'main_page/edit_page';
+        $this->layout();
+    }
+
+    public function update_user(){
+        return $this->User->update_user($this->input->post('user_id'),array(
+            'user_name'=>$this->input->post('user_name'),
+            'password'=>$this->input->post('password'),
+            'email'=>$this->input->post('email')
+        ));
     }
 
     /**

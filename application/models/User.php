@@ -68,6 +68,14 @@ Class User extends CI_Model {
         return $query->result();
     }
 
+    public function get_user_list_by_userid($userid){
+        $condition = "user_id='".$userid."'";
+        $this->db->select('*');
+        $this->db->from('User');
+        $this->db->where($condition);
+        return $this->db->get()->result();
+    }
+
     public function add_follow_with($from_user_id,$to_user_id){
         $this->db->insert('Follow', array(
             from_user_id =>$from_user_id,
@@ -94,6 +102,13 @@ Class User extends CI_Model {
         return $this->db->get()->result();
     }
 
+    public function delete_user($user_id){
+        return $this->db->delete('User', array('user_id' => $user_id));
+    }
+    public function update_user($user_id,$data){
+        $this->db->where('user_id',$user_id);
+        return $this->db->update('User',$data);
+    }
 }
 
 ?>
